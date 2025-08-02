@@ -1,4 +1,4 @@
-import type { ComponentType, JSX } from 'react';
+import type { ComponentType, JSX } from 'react'
 
 import { IndexPage } from '@/pages/IndexPage'
 
@@ -10,5 +10,5 @@ interface Route {
 }
 
 export const routes: Route[] = [
-  { path: '/', Component: IndexPage },
-];
+  { path: '/', Component: IndexPage, title: 'Home Page' },
+]

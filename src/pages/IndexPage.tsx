@@ -1,6 +1,7 @@
+import type { FC } from 'react'
 import { Page } from '@/components/Page'
 
-export const IndexPage = () => {
+export const IndexPage: FC = () => {
   return (
     <Page back={false}>
       <div>IndexPage</div>
