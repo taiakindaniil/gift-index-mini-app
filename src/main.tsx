@@ -2,11 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { retrieveLaunchParams } from '@telegram-apps/sdk-react'
 import './index.css'
-import App from './pages/App.tsx'
+import App from './components/App.tsx'
 
 // Mock the environment in case, we are outside Telegram.
 import './mockEnv.ts'
-import { init } from './init.ts'
+import { init } from './Init.ts'
 
 const root = createRoot(document.getElementById('root')!)
 
