@@ -6,7 +6,6 @@ export function App() {
   return (
     <>
       <HashRouter>
-        Hello world
         <Routes>
           {routes.map((route) => <Route key={route.path} {...route} />)}
           <Route path="*" element={<Navigate to="/" />}/>
