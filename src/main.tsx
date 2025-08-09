@@ -8,9 +8,9 @@ import { App } from './components/App'
 import './mockEnv.ts'
 import { init } from './Init.ts'
 
-const root = createRoot(document.getElementById('root')!)
-
 try {
+  const root = createRoot(document.getElementById('root')!)
+  console.log("Initialize root", root)
   const launchParams = retrieveLaunchParams();
   const { tgWebAppPlatform: platform } = launchParams;
   const debug = (launchParams.tgWebAppStartParam || '').includes('platformer_debug')
