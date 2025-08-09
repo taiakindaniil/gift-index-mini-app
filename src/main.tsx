@@ -24,7 +24,7 @@ try {
   await init({
     debug,
     eruda: debug && ['ios', 'android'].includes(platform),
-    mockForMacOS: platform === 'a',
+    mockForMacOS: platform === 'macos',
   }).then(() => {
     root.render(
       <StrictMode>
