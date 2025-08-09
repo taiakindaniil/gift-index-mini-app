@@ -92,17 +92,16 @@ export async function init(options: {
 
   console.log("Initiliazing tg app 7")
 
-  await Promise.all([
-    mountViewport.isAvailable() && mountViewport().then(() => {
-      console.log("Initiliazing tg app 8")
-      expandViewport();
-      console.log("Initiliazing tg app 9")
-      bindViewportCssVars();
-      console.log("Initiliazing tg app 10")
-
-      // if (setMiniAppHeaderColor.isAvailable() && setMiniAppHeaderColor.supports.rgb()) {
-      //   setMiniAppHeaderColor('#000000');
-      // }
-    }),
-  ]);
+  if (mountViewport.isAvailable()) {
+    mountViewport()
+      .then(() => {
+        expandViewport();
+        console.log("Initiliazing tg app 9")
+        bindViewportCssVars();
+        console.log("Initiliazing tg app 10")
+        // if (setMiniAppHeaderColor.isAvailable() && setMiniAppHeaderColor.supports.rgb()) {
+        //   setMiniAppHeaderColor('#000000');
+        // }
+      })
+  }
 }
