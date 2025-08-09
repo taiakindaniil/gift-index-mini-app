@@ -27,11 +27,8 @@ export async function init(options: {
     mockForMacOS: boolean;
 }): Promise<void> {
   // Set @telegram-apps/sdk-react debug mode and initialize it.
-  console.log("Initiliazing tg app")
   setDebug(options.debug);
-  console.log(options.debug)
   initSDK();
-  console.log("Initiliazing tg app 2")
 
   
   // Add Eruda if needed.
@@ -43,13 +40,10 @@ export async function init(options: {
   if (swipeBehavior.mount.isAvailable()) {
     swipeBehavior.mount();
   }
-  console.log("Initiliazing tg app 3")
 
   if (swipeBehavior.disableVertical.isAvailable()) {
     swipeBehavior.disableVertical();
   }
-
-  console.log("Initiliazing tg app 4")
   
   // Telegram for macOS has a ton of bugs, including cases, when the client doesn't
   // even response to the "web_app_request_theme" method. It also generates an incorrect
@@ -77,28 +71,21 @@ export async function init(options: {
       },
     });
   }
-  console.log("Initiliazing tg app 5")
 
   // Mount all components used in the project.
   mountBackButton.ifAvailable();
   restoreInitData();
-
-  console.log("Initiliazing tg app 6")
 
   // Safe to call in any order.
   themeParams.mountSync();
   miniApp.mountSync();
   bindThemeParamsCssVars();
 
-  console.log("Initiliazing tg app 7")
-
   if (mountViewport.isAvailable()) {
     mountViewport()
       .then(() => {
         expandViewport();
-        console.log("Initiliazing tg app 9")
         bindViewportCssVars();
-        console.log("Initiliazing tg app 10")
         // if (setMiniAppHeaderColor.isAvailable() && setMiniAppHeaderColor.supports.rgb()) {
         //   setMiniAppHeaderColor('#000000');
         // }
