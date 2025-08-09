@@ -94,8 +94,11 @@ export async function init(options: {
 
   await Promise.all([
     mountViewport.isAvailable() && mountViewport().then(() => {
+      console.log("Initiliazing tg app 8")
       expandViewport();
+      console.log("Initiliazing tg app 9")
       bindViewportCssVars();
+      console.log("Initiliazing tg app 10")
 
       // if (setMiniAppHeaderColor.isAvailable() && setMiniAppHeaderColor.supports.rgb()) {
       //   setMiniAppHeaderColor('#000000');
