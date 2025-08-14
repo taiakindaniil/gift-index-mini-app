@@ -1,3 +1,4 @@
+import { useSignal, isMiniAppDark } from "@telegram-apps/sdk-react"
 import { createContext, useContext, useEffect, useState } from "react"
 
 type Theme = "dark" | "light" | "system"
@@ -29,6 +30,17 @@ export function ThemeProvider({
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
+
+  const isDark = useSignal(isMiniAppDark)
+
+  // Когда меняется тема в Telegram Mini App → обновляем тему в приложении
+  useEffect(() => {
+    if (isDark !== undefined) {
+      const newTheme = isDark ? "dark" : "light"
+      localStorage.setItem(storageKey, newTheme)
+      setTheme(newTheme)
+    }
+  }, [isDark, storageKey])
 
   useEffect(() => {
     const root = window.document.documentElement
