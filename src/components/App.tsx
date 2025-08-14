@@ -13,7 +13,7 @@ export function App() {
 
   useEffect(() => {
     setTheme(isDark ? 'dark' : 'light')
-  }, [isDark, setTheme]);
+  }, [isDark]);
 
   return (
     <>
